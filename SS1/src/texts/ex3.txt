@@ -1,0 +1,29 @@
+
+Input:
+username (String): tên người dùng
+foodName (String): tên món ăn
+quantity (int): số lượng
+
+Output:
+Thành công: "Đặt món thành công"
+Thất bại:
+"Món ăn đã hết hàng"
+"Số dư không đủ"
+
+Kiến trúc
+OrderFoodService (Service xử lý chính)
+InventoryRepository (Kiểm tra kho)
+UserAccountRepository (Quản lý tài khoản)
+
+Xử lý logic
+Nhận request đặt món
+Kiểm tra số lượng trong kho: Nếu quantity <= 0 -> báo “Hết hàng”
+Lấy giá món ăn → tính tổng tiền
+Kiểm tra số dư tài khoản: Nếu không đủ tiền -> báo “Không đủ tiền”
+Trừ tiền trong tài khoản
+Trừ số lượng trong kho
+Trả về kết quả thành công
+
+Xử lý lỗi (Bẫy dữ liệu)
+Kho = 0 -> dừng ngay, không trừ tiền
+Tài khoản âm / không đủ -> dừng, không trừ kho

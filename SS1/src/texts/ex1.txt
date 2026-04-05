@@ -1,0 +1,6 @@
+Đoạn sai nằm ở:
+this.gateway = new InternalPaymentGateway();
+Cách viết làm mất tính linh hoạt vì:
+- RechargeService phụ thuộc trực tiếp vào class cụ thể InternalPaymentGateway -> Tight Coupling
+- Không tuân theo Dependency Injection: Thay vì được cung cấp dependency từ bên ngoài, class lại tự tạo dependency
+- Vi phạm nguyên lý IoC: RechargeService tự quyết định dùng gateway nào

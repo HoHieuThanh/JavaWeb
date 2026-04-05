@@ -1,0 +1,11 @@
+        	        Constructor Injection 	Field Injection
+
+Cách hoạt động: 	Inject qua constructor	Inject trực tiếp vào field (@Autowired)
+Tính rõ ràng	    Rõ dependency cần gì	Ẩn dependency
+Tính bất biến   	Có thể dùng final	    Không dùng được final
+Test            	Dễ mock, dễ test	    Khó test, phụ thuộc Spring
+Loose Coupling	    Cao             	    Thấp hơn
+Lỗi runtime         Phát hiện sớm khi thiếu dependency	 Có thể null runtime
+Linh hoạt           Kém linh hoạt	        Linh hoạt hơn
+
+-> Chọn: Constructor Injection
